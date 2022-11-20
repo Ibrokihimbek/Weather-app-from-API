@@ -75,24 +75,28 @@ class _WeatherDetailScreenState extends State<WeatherDetailScreen> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Image.asset(MyImages.image_rain_fall),
-                        Image.asset(MyImages.image_wind),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 16),
-                          child: Image.asset(MyImages.image_humidity),
+                        Column(
+                          children: [
+                            Image.asset(MyImages.image_rain_fall),
+                            Text(widget.daily[1].weather[0].description),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Image.asset(MyImages.image_wind),
+                            Text('${widget.daily[1].windSpeed} km/h'),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(top: 16),
+                              child: Image.asset(MyImages.image_humidity),
+                            ),
+                            Text('${widget.daily[1].humidity} %'),
+                          ],
                         ),
                       ],
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 8, right: 12),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(widget.daily[1].weather[0].description),
-                          Text('${widget.daily[1].windSpeed} km/h'),
-                          Text('${widget.daily[1].humidity} %'),
-                        ],
-                      ),
                     ),
                   ],
                 ),

@@ -212,7 +212,7 @@ class _WeatherMainScreenState extends State<WeatherMainScreen> {
                       ),
                     );
                   } else {
-                    return Text("Error:${snapshot.error.toString()}");
+                    return Image.asset(MyImages.gif_error);
                   }
                 },
               ),
@@ -354,7 +354,7 @@ class _WeatherMainScreenState extends State<WeatherMainScreen> {
                           const SizedBox(height: 40),
                           Container(
                             padding: const EdgeInsets.only(top: 10),
-                            height: 160,
+                            height: 134,
                             child: ListView.builder(
                               itemBuilder: (BuildContext context, int index) {
                                 return TimeWeather(oneCallData!.hourly[index]);
@@ -369,7 +369,7 @@ class _WeatherMainScreenState extends State<WeatherMainScreen> {
                         ],
                       );
                     } else {
-                      return Text("Error:${snapshot.error.toString()}");
+                      return Image.asset(MyImages.gif_error);
                     }
                   }),
           ],
@@ -391,15 +391,22 @@ class _WeatherMainScreenState extends State<WeatherMainScreen> {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(
                 width: 5,
               ),
-              Image.asset(imageName),
+              Image.asset(
+                imageName,
+                width: word == 'Humidity' ? 45 : null,
+              ),
               const SizedBox(
                 width: 8,
               ),
-              Text(word),
+              Padding(
+                padding: EdgeInsets.only(bottom: word == "Humidity" ? 14 : 4),
+                child: Text(word),
+              ),
             ],
           ),
           Text(word1),
@@ -414,10 +421,9 @@ class _WeatherMainScreenState extends State<WeatherMainScreen> {
       margin: const EdgeInsets.all(4),
       decoration: BoxDecoration(
         color: const Color(0xFFFEEAD9),
-        borderRadius: BorderRadius.circular(18),
+        borderRadius: BorderRadius.circular(22),
       ),
-      width: 100,
-      height: 40,
+      width: 50,
       child: Column(
         children: [
           const SizedBox(

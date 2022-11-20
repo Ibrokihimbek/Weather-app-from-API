@@ -7,7 +7,7 @@ import 'package:weather_app/data/models/helper/lat_lon.dart';
 import 'package:weather_app/data/models/weather_main_model.dart';
 
 const String BASE_URL = "api.openweathermap.org";
-const String API_TOKEN = "139d82d53b7f20c0a44c1bc27377f9ff";
+const String API_TOKEN = "4a8eaf9ed512f638cdd7a82434895402";
 
 class AppRepository {
   static Future<WeatherMainModel> getWeatherMainDataByQuery({

@@ -20,4 +20,8 @@ class MyImages {
   // SVG
 
   static const svg_humidity = 'assets/icons/humidity.svg';
+
+  // GIF
+
+  static const gif_error = 'assets/gifs/73069-error.gif';
 }
